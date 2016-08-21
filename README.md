@@ -1,6 +1,6 @@
 #This is the source code and class notes for JALC CPS176 course for Fall 2016.
 ### [Syllabus]()
-##TOC
+### TOC
 * Chapter 1: [Introduction to Computers and Java](introduction/)
 * Chapter 2: [Java Fundamentals](fundamentals/)
 * Chapter 3: [Decision Structures](decision_structures/)
@@ -18,4 +18,3 @@
 * Chapter 15: [JavaFX and Scene Builder](javafx_and_scene_builder/)
 * Chapter 16: [Recursion](recursion/)
 * Chapter 17: [Databases](databases/)
-More to come
