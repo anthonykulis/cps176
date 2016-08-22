@@ -50,6 +50,19 @@ Class notes for Chapter 1
   * Question - Explain binary. Also, besides bit and byte, there are two other popular number formats. Hint: Binary is a base 2 number and decimal is base 10. The two I am looking for are base 8 and base 16, but have common names.
 * RAM is *ordered*. This means we can access it logically from start to finish by supplying it an address.
   * For instance - if we are RAM that has 32bit words (8 Bytes), each address accessible with be in steps of 8 Bytes, e.g. 0x0000, 0x0008, ..., 0xFFFF
+* RAM is typically volatile. This means when it loses power it loses the instruction set loaded into it.
 
 #### Secondary Storage
+* Consider secondary storage to be your long term storage.
+* SSD, HDD, Flash, even the *cloud* can be secondary storage.
+
+#### Input Devices
+* A computer is useless to us unless it can take input from the outside world.
+* For general computing, the obvious keyboard and mouse are input devices.
+* Question - what are some other input devices you can think of?
+
+#### Output Devices
+* Again, the obvious monitor, speakers, printer are output devices.
+* Question - what are some other output devices?
+
 ### Software
