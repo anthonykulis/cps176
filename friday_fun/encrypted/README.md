@@ -99,8 +99,7 @@ Hint one of the two encoding tables only go to 127 bits. And since we know 2^8 =
 Example -
 
 ```
-a XOR b =
-01100001 XOR 01100010 = 00000011
+a XOR b = 01100001 XOR 01100010 = 00000011
 ```
 
 Ok. So there are lots of characters to try. But we probably know Donald used normal letters to encrypt. Most likely a-z or A-Z. So lets stick with that for now.
