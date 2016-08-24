@@ -108,7 +108,7 @@ Class notes for Chapter 1
 * Syntax - Just like the English language requires a noun and a verb, programming languages have constructs that define them and how they should appear. This means that items such as `keywords`, `identifiers`, `punctuation`, and `operators` are required to appear in certain orders and that grammatically create a legal program.
 
 #### Example Language Elements
-* Please visit the [sample program](examples/introduction/Payroll.java) for a highly verbose example of language elements
+* Please visit the [sample program](../examples/introduction/Payroll.java) for a highly verbose example of language elements
 * A list of Java keywords can be found on page 10, table 1-3 in your text book. They are testable items!
 
 #### The Compiler and the Java Virtual Machine
@@ -133,4 +133,4 @@ Class notes for Chapter 1
 * Loosely speaking, text editors can be IDEs assuming they provide the plugin support. I currently use [Atom](http://atom.io) which is very lightweight editor but has open ended plugin support. If I choose, I could continue to provide it plugins until it mimics the heaviest IDEs (eg Netbeans) or keep it as lightweight as a simple text editor with no language support.
 
 ## 1.6 The Programming Process
-* We shall stop here for today 
+* We shall stop here for today
