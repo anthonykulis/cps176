@@ -111,7 +111,7 @@ Here are the steps to get the key.
 1. What is the most frequently used character/keyboard entry?
 2. Take that hex code and convert it to binary.
 3. XOR the two numbers (guessed key in binary and most frequent binary number).
-5. Convert to hex
+5. Convert XOR'd result to hex - hopefully our encryption key!
 6. Look up the letter on the table.
 7. That is your key! Maybe.
 8. Try it out on a sequence of letters by XOR'ing them in a row.
