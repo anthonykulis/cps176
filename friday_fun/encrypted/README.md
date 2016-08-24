@@ -50,9 +50,9 @@ I also know it is in hex! We can tell by the letters going up to `d` and from th
 00111101 01101010
 ```
 
-So this is interesting. Anyone notice a pattern here?
+So this is interesting. Anyone notice a pattern here? Hint MSB.
 
-So looking at the algorithm uses the XOR operator.
+So looking at the algorithm, we know it uses the XOR operator.
 ```
 (char.charCodeAt(0) ^ key.charCodeAt(0))
 ```
@@ -65,8 +65,11 @@ What that means is either this or that, not both. Here is an example
 1 XOR 0 = 1
 1 XOR 1 = 0
 ```
+See how either the first operand is 1 and the second is a 0, or the second is a 0 and the first is a 1, and that is the only way to get an output of 1, otherwise 0?
 
-This is boolean logic. Here is the AND operator
+This is boolean logic using XOR operator.
+
+For reference, here is the AND operator
 ```
 0 AND 0 = 0
 0 AND 1 = 0
