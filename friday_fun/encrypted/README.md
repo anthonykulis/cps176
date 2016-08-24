@@ -106,7 +106,7 @@ Next, lets think about the most frequent letter or character used. Do we notice 
 
 Here are the steps to get the key.
 
-1. What is the most frequently used character?
+1. What is the most frequently used character/keyboard entry?
 2. Take that hex code and convert it to binary.
 3. XOR the two numbers.
 5. Convert to hex
