@@ -116,6 +116,6 @@ Here are the steps to get the key.
 7. That is your key! Maybe.
 8. Try it out on a sequence of letters by XOR'ing them in a row.
 9. Does it make sense?
-10. If yes, then continue onwards, if no, then repeat from step 1.
+10. If yes, then continue onwards, if no, then repeat from step 1 with the next most frequent character / keyboard entry.
 
 Awesome job everyone. Lets publish Donald's email to wikileaks and become famous!
