@@ -105,6 +105,7 @@ Ok. So there are lots of characters to try. But we probably know Donald used nor
 Next, lets think about the most frequent letter or character used. Do we notice numbers repeating? I noticed `01100100` repeats 4 times! Since we know from the source code our key is only 1 character long, we know for sure that this is the most frequently used character! Lets try to find the key from that.
 
 Here are the steps to get the key.
+
 1. What is the most frequently used character?
 2. Take that hex code and convert it to binary.
 3. XOR the two numbers.
