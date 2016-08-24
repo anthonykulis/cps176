@@ -7,7 +7,7 @@ From: Donald's Security Team
 To: Everyone
 Subject: Encrypt all emails!
 
-Please find our new encryption algorithm on http://www.github.com/anthonykulis/cps215/friday_fun/encrypted/algorithm.js.
+Please find our new encryption algorithm on https://github.com/anthonykulis/cps176/blob/master/friday_fun/encrypted/algorithm.js.
 
 It is okay to allow the algorithm to be seen but keep your key secret!
 
