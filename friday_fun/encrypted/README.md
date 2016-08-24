@@ -110,7 +110,7 @@ Here are the steps to get the key.
 
 1. What is the most frequently used character/keyboard entry?
 2. Take that hex code and convert it to binary.
-3. XOR the two numbers.
+3. XOR the two numbers (guessed key in binary and most frequent binary number).
 5. Convert to hex
 6. Look up the letter on the table.
 7. That is your key! Maybe.
