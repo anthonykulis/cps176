@@ -104,7 +104,7 @@ a XOR b = 01100001 XOR 01100010 = 00000011
 
 Ok. So there are lots of characters to try. But we probably know Donald used normal letters to encrypt. Most likely a-z or A-Z. So lets stick with that for now.
 
-Next, lets think about the most frequent letter or keyboard button used. Do we notice numbers repeating? I noticed `01100100` repeats 4 times! Since we know from the source code our key is only 1 character long, we know for sure that this is the most frequently used character! Lets try to find the key from that.
+Next, lets think about the most frequent letter or keyboard button used. Do we notice numbers repeating? I noticed `01100100` repeats 4 times! Since we know from the source code our key is only 1 character long, we know for sure that this is the most frequently used keyboard character! Lets try to find the key from that.
 
 Here are the steps to get the key.
 
