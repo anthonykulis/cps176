@@ -65,7 +65,7 @@ What that means is either this or that, not both. Here is an example
 1 XOR 0 = 1
 1 XOR 1 = 0
 ```
-See how either the first operand is 1 and the second is a 0, or the second is a 0 and the first is a 1, and that is the only way to get an output of 1, otherwise 0?
+See how either the first operand is 1 and the second is a 0, or the second is a 1 and the first is a 0, and that is the only way to get an output of 1, otherwise 0?
 
 This is boolean logic using XOR operator.
 
