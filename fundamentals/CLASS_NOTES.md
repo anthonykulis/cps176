@@ -170,7 +170,28 @@ public class PrimtiveExamples {
 ```
 
 ### Variable Assignment and Initialization
+* Initialization occurs when the variable is allocated space and assigned an address.
+  * The amount allocated depends on the primitive size and some underlying Java information that is beyond the scope of this class (headers, etc)
+
+* Assignment of values occur when the literal right hand side (or possibly another variable of the same type), is assigned via the assignment operator to the left. The right hand side type must match (or be capable of being converted to) the left hand side type.
+  * Assigning a literal - `int num = 3;`
+  * Assigning a variable to a variable - `int anotherNum = num`;
+    * In this case, the value of `num` is given to the value of `anotherNum`
+    * This means if I change `num` to 4, the value of `anotherNum` remains 3.
+      * Later, we will see *reference variables* where the above is ***NOT*** true.
+
+* Java will default variables not initialized to the typed representation of 0
+  * `int num;` will be typed and set to a default value of 0
+  * `String someEmptyString;` will be typed and set to a default value of `null`
+  * `null` and `0` both have the same "value" but will need to be referenced as their type indicates.
 
 ### Variable Caveats
+* I think this is obvious, but variables only hold one value at a time.
+```java
+int four = 4;
+four = 5;
+
+// what is the value of four?
+```
 
 ## 2.5 Arithmetic Operators
