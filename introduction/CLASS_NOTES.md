@@ -133,4 +133,17 @@ Class notes for Chapter 1
 * Loosely speaking, text editors can be IDEs assuming they provide the plugin support. I currently use [Atom](http://atom.io) which is very lightweight editor but has open ended plugin support. If I choose, I could continue to provide it plugins until it mimics the heaviest IDEs (eg Netbeans) or keep it as lightweight as a simple text editor with no language support.
 
 ## 1.6 The Programming Process
-* We shall stop here for today
+* The book suggests a process I do not necessarily buy into. Being said, the programming process is your "flow". Some business will require certain steps, but that is beyond the scope of this course. Please read that section, follow their ideas, and modify them slightly to best suit your skills.
+
+1.  Define what the program is to do
+2.  Visualize the program running on the computer
+3.  Use design tools to create a model of the program
+4.  Check the model for logical errors
+5.  Enter the code and compile it
+6.  Correct any errors found in the compiling process
+7.  Run the program with test data for input
+8.  Correct any runtime errors that occur
+9.  Validate the results of the program
+
+## 1.7 Object Orientated Programming
+* This will be introduced under [Java Fundamentals](fundamentas/)
