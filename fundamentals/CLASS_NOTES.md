@@ -150,7 +150,7 @@ public class PrimtiveExamples {
     long someLong = 10000000000000000000;
 
     // float example
-    float someFloat = 1.3434;
+    float someFloat = 1.3434f;
 
     // double example
     double someDouble = 1.2345678;
