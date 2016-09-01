@@ -401,3 +401,5 @@ short firstNumber = 10,
 ## 2.13 Reading Keyboard Input
 ## 2.14 Dialog Boxes
 ## 2.15 Common Errors to Avoid
+
+# WARNING - FINISHING CHAPTER 2 REQUIRES AN UPCOMING TEST
