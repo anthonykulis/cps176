@@ -195,3 +195,209 @@ four = 5;
 ```
 
 ## 2.5 Arithmetic Operators
+
+* Three types of arithmetic operators
+  1. Unary
+  2. Binary
+  3. Ternary
+
+### Unary operators
+* Only require one operand
+* Eg: `-5` or `-number` where `number` was defined as `int number = 5;`
+* List -
+  * `+` - positive
+  * `-` - negative
+  * `++` - adds 1 to value
+  * `--` - subtracts 1 from value
+  * `!` - negates boolean value
+* Note: `- 1` or `+ 1` does not work. Unary operators must "touch" the operand they function on. This means no spaces.
+
+```java
+public class UnaryOperators {
+  public static void main(String[] args){
+
+    // unary - operator to make negative number
+    int number = -1;
+
+    // unary + operator makes the number positive
+    number = +1;
+
+    /* unary -- subtract one, making number now equal to 0.
+       realize, you do not need to assign the change for it to take place.
+
+       same as number = number - 1;
+    */
+    number--;
+
+    /* unary ++ adds one, making the number now equal to 1.
+       as with the -- operator, you do not need to assign this operator for
+       changes to take affect
+
+       same as number = number + 1;
+    */
+    number++;
+
+    boolean falsey = false;
+
+    // unary ! flips boolean values
+    falsey = !falsey;
+  }
+}
+```
+
+### Binary Operators
+* Not binary as in 0100101, but binary in that it works on two operators.
+* Eg: `sum = 3 + 5;`
+* List -
+  * `+` - adds two numbers
+  * `-` - subtracts two numbers
+  * `*` - multiplies two numbers
+  * `/` - divides two numbers
+  * `%` - remainder of two numbers, pronounced *Modulus*
+
+* While the addition, subtraction, multiplication, and division are trivial, modulus can be tricky
+
+```java
+public class ModulusOperator {
+  public static void main(String[] args){
+
+    int number = 108;
+
+    /*
+      to highlight the most used reason for modulus we will loop from number
+      to 0 and print if the next number is odd or even. The trick here is to
+      realize that any number under modulus 2 is either 0 or 1. If the remained of any number divided by 2 is 0, then it must be an even number.
+    */
+    while(number >= 0){
+
+      // even!
+      if(number % 2 == 0){
+        System.out.println(number + " is even");
+      }
+      // odd
+      else {
+        System.out.println(number + " is odd");
+      }
+    }
+  }
+}
+```
+
+#### Caveats with Integer Division
+* Imagine I had the following - note this will not compile, so dont waste your time trying... yet!
+
+```java
+  public class Caveat {
+    public static void main(String[] args){
+
+      int threeQuarters = 3/4;
+
+      // what does this print out?
+      System.out.println(threeQuarters);
+
+      // what does this print out?
+      System.out.println(3/4);
+
+      double threeFifths = 3/5;
+
+      // what does this print out?
+      System.out.println(threeFifths);
+
+      // Tricky one here - can you figure out what fourFifths will print as?
+      double fourFifths = 4/5;
+      int castDown = fourFifths;
+      fourFifths = castDown;
+
+      System.out.println(fourFifths);
+
+    }
+  }
+```
+
+* Real numbers can be *cast* into Integer numbers losing precision - `3.4 -> 3`
+* Integers can be cast up to real numbers `1 -> 1.00`
+
+### Order Precedence
+* Same as regular math (eg PEDMA)
+* Highest to lowest
+  1. `-` - unary negation
+  2. `* / %`
+  3. `+ -`
+
+* Associativity of operators is as to be expected as well
+ 1. `-` - works on number to right of it (right to left)
+ 2. `* / %` - left to right
+ 3. `+ -` - left to right
+
+### The Math Class
+* You will notice not all match operators were stated.
+* The `Math` class covers the more *complicated* math functions
+  * `double result = Math.pow(2.0, 4.0);`
+  * `double result = Math.sqrt(9.0);`
+
+### Combined Operators
+* Some things get annoying to type repeatedly
+  * `number = number + 1`
+* Java provides *shortcuts* via the *combined operators*
+  * `number += 1` - same as `number = number + 1;`
+  * `number *= 2` - same as `number = number * 2;`
+  * `number /= 16` - same as `number = number / 16;`
+  * `number -= 5` - same as `number = number - 5;`
+  * `number %= 2` - same as `number = number % 2;`
+* Notice how each example above *reuses* the variable being operated on? That is a must when using combined operators
+* You can also expand this with more binary numbers
+  * `number %= 2 + 5` - same as `number = number % 2 + 5;`
+* Try
+
+```java
+public class Experiment {
+  public static void main(String[] args){
+    int number = 4;
+    number += 3 % 2;
+
+    // Is it 5 or 7? Why?
+    System.out.println(number);
+  }
+}
+```
+
+### Number conversion
+* I have already hinted on this when showing how a number can be cast.
+* Highest to lowest
+  * double
+  * float
+  * long
+  * int
+  * short
+  * byte
+* If we cast to a lower level number we can lose precision or value. I hope this is intuitive when thinking about the size of each primitive.
+* Going downwards in size of type is called `narrowing conversion`
+  * Java will throw an error on narrowing conversion
+* Going upwards in size of type is called `widening conversion`
+
+### Cast operators
+* So far you have seen automatic casting, but we can do it manually.
+  * `double d = (double) someInt;`
+* Since we cannot cast down (narrowing) automatically, manual casting may be required.
+  * Try to now code the above class `Caveat`, fixing the downcasts using manual casting.
+
+### Mixed Integer Operators
+* Java has some gotcha moments!  
+
+```java
+short firstNumber = 10,
+      secondNumber = 20,
+      thirdNumber;
+```
+* If I add the first short to the second short, the resulting data type should be a short right?
+  * Well no. Its an `int`, and hence  `thirdNumber = firstNumber + secondNumber` would cause an error.
+  * Remember, you are assigning the **OUTPUT** of the arithmetic operation to the `thirdNumber`, the math operation can occur without the need to store its value in a variable. The storing of the value is a `side effect` ***separate*** from the action of doing the addition.
+
+## 2.8 `final` Keyword
+## 2.9 `String` class
+## 2.10 Scope
+## 2.11 Comments and Documentation
+## 2.12 Programming Style
+## 2.13 Reading Keyboard Input
+## 2.14 Dialog Boxes
+## 2.15 Common Errors to Avoid
