@@ -278,6 +278,8 @@ public class ModulusOperator {
       else {
         System.out.println(number + " is odd");
       }
+
+      number--;
     }
   }
 }
