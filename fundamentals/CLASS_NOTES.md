@@ -337,7 +337,7 @@ public class ModulusOperator {
   * `double result = Math.pow(2.0, 4.0);`
   * `double result = Math.sqrt(9.0);`
 
-### Combined Operators
+## 2.6 Combined Operators
 * Some things get annoying to type repeatedly
   * `number = number + 1`
 * Java provides *shortcuts* via the *combined operators*
@@ -357,13 +357,13 @@ public class Experiment {
     int number = 4;
     number += 3 % 2;
 
-    // Is it 5 or 7? Why?
+    // Is it 5 or 1? Why?
     System.out.println(number);
   }
 }
 ```
 
-### Number conversion
+## 2.7 Number conversion
 * I have already hinted on this when showing how a number can be cast.
 * Highest to lowest
   * double
@@ -391,16 +391,153 @@ short firstNumber = 10,
       secondNumber = 20,
       thirdNumber;
 ```
+
 * If I add the first short to the second short, the resulting data type should be a short right?
   * Well no. Its an `int`, and hence  `thirdNumber = firstNumber + secondNumber` would cause an error.
   * Remember, you are assigning the **OUTPUT** of the arithmetic operation to the `thirdNumber`, the math operation can occur without the need to store its value in a variable. The storing of the value is a `side effect` ***separate*** from the action of doing the addition.
 
 ## 2.8 `final` Keyword
-## 2.9 `String` class
+* The `final` keyword is used to make a variable into a constant
+* A constant cannot be changed during runtime
+  * Remember, runtime is as the program executes and compile time is as the program compiles
+  * Constants must be initialized with a value
+    * `final double PI = 3.14;`
+  * Use constants in a logical setting, eg `double balance = amount * .069`. Here, `.069` would make more sense if it was a constant `final double interestRate = .069;`
+
+## 2.9 The `String` class
+* We have seen 8 primitives dealing with numbers, true|false, and bytes.
+* Yet if we have say a name `Anthony Kulis`, we cannot store that in any of those primitives.
+  * Since we cannot store that in a primitive, we need to use an `object`
+  * An *object* is an **instance** of a *class*
+* The `String` class has many *methods* allowing us to use a string.
+  * These methods are known as mutators and accessors - but more on that later.
+
+### Difference between a Class and an Object
+* The programmer writes the Class.
+  * They determine what attributes the class must have  
+    * Eg `volume` in a bottle
+  * They write methods to access and mutate those attributes
+  * Think of the class as a blueprint of the object
+
+* The programmer then *instantiates* the class - this actually happens during runtime
+  *  `String dogName = new String("Cujo");`
+  * During runtime when the Java Virtual Machine encounters the above line, it translates the class into an object. This object is then stored in what is known as the *heap* and a reference address to that object is stored in the *stack*
+    * The above is *very, very, very* important to remember
+
+  * Because some things occur so often Java has built in some short cuts.
+    * `String dogName = "Cujo";` is the same as `String dogName = new String("Cujo");`
+    * But this doesn't work for any object, only a string since anything in-between `""` is a *string literal*
+      * In fact, any literal assigned to the corresponding object works.
+        * `double` is primitive but `Double` is the object, so `Double d = 34.4;` works as well.
+
+* Java built-in classes can be found at the Java API.
+  * Be sure to look at the API for your version of Javas SDK
+  * You can find the version by going to the command line and typing `java -version`
+    * The output will be separated by periods, eg `1.8.3`, the second set of numbers, in this case `8`, will be the JDK version. So I would reference the Java 8 API
+    * The [Java 8 API](https://docs.oracle.com/javase/8/docs/api/)
+    * Also make sure to reference the SE, EE, or ME release depending on your SDK used.
+      * In class, we use the Standard Edition (SE)
+
+### Static Classes
+* If you have been paying attention you noticed I did something similar to `String dogName = "Cujo";`. This is called *instantiation*. Yet you have encountered some objects in your practice coding that you can just call without instantiating first, eg `System` from `System.out.println`. This is because the `System` class is declared to be static using `static` keyword. Declaring something static, whether it be a class, variable, or method means only one instance and no more of the statically declared item will exist during runtime. Being said for a class, you can call it by its class name instead of a variable instance. We will cover this in detail later, but for now, realize that if it is static, this is how you can call it.
+
+
 ## 2.10 Scope
+* For Java scope is pretty simple. In other languages, *javascript* for example, scope confuses most programmers who are new to it. The reason for it is because they do not learn it well here.
+
+* Every variable, primitive or object, has scope. In fact, we can have *anonymous* methods and classes in Java 8 that in-effect, provide us more control over scope.
+
+* Imagine scope like this..
+  * Look at the class rooms clock. Do you notice how you can see the clock and many other things surrounding the clock?
+  * Now cup you hand around your eyes like a monocular and close your hand down until you can only see the clock.
+  * The difference of the two is scope. Scope defines what parts of the program can be seen by other parts of the program. Fortunately for Java, defining and limiting scope is trivial to do.
+
+```java
+// the curly braces "opening" and "closing" ScopeDemo define the classes scope
+public class ScopeDemo {
+
+  String classScope = "I am available to the entire class and known as a class variable";
+
+  // the curly braces opening and closing the main method define the methods scope
+  public static void main(String[] args){
+
+    String mainMethodScope = "I am available only inside the main methods scope";
+
+    // the curly braces opening and closing the if statement define the conditions scope
+    if(true){
+      String ifStatementScope = "I am available only inside this if statement";
+    }
+
+    // this println will work fine. We are inside the classes scope
+    System.out.println(classScope);
+
+    // this println will work fine. We are inside the main methods scope
+    System.out.println(mainMethodScope);
+
+    // this will create a compile time error because we the variable was defined inside the if
+    // statements scope. since we are out of that scope (closing curly brace), the variable is not available
+    // for use.
+    System.out.println(ifStatementScope);
+  }
+
+  // the curly braces opneing and closing this method are only available to this method
+  public static void anotherMain(String[] args){
+
+    // this println statement will work fine because we are in the classes scope!
+    System.out.println(classScope);
+
+    // this println statement will cause a compiler time fail because we are not in the main method
+    // and hence the mainMethodScope variable is not in our current scope!!!
+    System.out.println(mainMethodScope);
+  }
+}
+```
+
 ## 2.11 Comments and Documentation
+* You've seen this now and should intuitively understand it.
+* Comments are notes we can leave about what our code is doing.
+* The compiler will ignore them
+  * Caveat - some "pre-compilers" will look for comments created certain ways and translate them into useful information. One example of this is how the Java 8 API is auto created. We will not cover this in class, but you can google "how to create java API Documentation" if you are interested. Many businesses will require this when you are writing libraries.
+
+* Two methods to create a comment: `//` - inline and `/* comment here */` - block
+
+```java
+// I am a inline comment
+int x = 4;
+
+// every line I want a comment I have to start it with the double slash. Everything to the right of the double slashes on that line will be commented out
+
+double y = 3.4; // I can even start the inline comment later
+
+/*
+  I am a block comment. Using the slash-star to start the comment block
+  everything I type until the star-slash will be commented out.
+*/
+int x = 4;
+
+String confusing = "I can even " + /* break up a line */ " and have legal code."; /* But I suggest you dont do that. Ever. */
+
+```
+
 ## 2.12 Programming Style
+* I dont want to cover programming stye. The reason is for this is well beyond the scope of this class.
+* Typically a good software company will have what are called *linters* for the style they want. As you get used to the IDE you can run your own linters and you will see that if you violate the style of the linter the IDE will highlight the "error".
+  * In fact, online tools will lint your code upon a push request to the repository. If it fails this test, your request will be rejected.
+* There is one thing a linter is not good at catching and that is *imperative* versus *declarative* style. When you learn how to write methods, we will cover this in detail.
+
 ## 2.13 Reading Keyboard Input
+* So we need to read keyboard input. This makes sense.
+* Mini-quiz - What primitive would we use to read a keyboard input?
+  * Hopefully you immediately realize that is a trick question.
+
+* Since no primitive covers reading keyboard input, we obviously need a class to do it for us.
+
+* If you recall a few practice labs ago we used the `Scanner` class.
+  * Lets go to the [Scanner API](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
+  * We shall go over this page in detail.
+
+
+
 ## 2.14 Dialog Boxes
 ## 2.15 Common Errors to Avoid
 
