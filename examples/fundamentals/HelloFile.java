@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class HelloFile {
@@ -18,14 +19,22 @@ public class HelloFile {
 
     //now we know the name of the file, lets read set up our
     //class instances.
-    fileReader = new FileReader(fileName);
-    bufferedReader = new BufferedReader(fileReader);
+    try {
+      fileReader = new FileReader(fileName);
+      bufferedReader = new BufferedReader(fileReader);
 
-    // now read our file (only one line for this exercise)
-    fileText = bufferedReader.readLine();
+      // now read our file (only one line for this exercise)
+      fileText = bufferedReader.readLine();
 
-    // now print out hello, [fileText]
+    } catch(FileNotFoundException ex) {
+      System.out.println("Unable to find " + fileName + ". Exiting");
+      System.exit(0);
+    }
+
+    // now print out hello, [fileText] - only will print if we passed the exceptions
     System.out.println("Hello, " + fileText);
+
+
 
   }
 }
