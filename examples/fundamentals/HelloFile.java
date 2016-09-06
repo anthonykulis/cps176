@@ -28,7 +28,7 @@ public class HelloFile {
 
     } catch(FileNotFoundException ex) {
       System.out.println("Unable to find " + fileName + ". Exiting");
-      System.exit(0);
+      System.exit(1);
     }
 
     // now print out hello, [fileText] - only will print if we passed the exceptions
