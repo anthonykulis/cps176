@@ -19,7 +19,7 @@ For this lab, you will be required to collect:
   * Constitution
   * Intelligence
   * Defense
-* You will need to use the Math class to roll a random number modulated by 21
+* You will need to use the Math class to roll a random number multiplied by 21
 * You will need to cast that random number to type int and add it to an attribute
   * You will initialize your Base Attributes to 5
 * You will need to repeat this for each attribute (do not use a loop)
