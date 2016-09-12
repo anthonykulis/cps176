@@ -70,7 +70,7 @@ Using our imagined `Math.random()` output, `shiftedAndScaledRandomNumber` would 
 * ***Optional Read - Using alternative approaches to getting our value.***
 Our first option it to round the value. If we round the value, we then could suffer going from `1` to `21`. This will cause our roll to be outside of our bounds. You may think to yourself that we could have avoided adding a `1` in the beginning of modifying this number, but if you coded this out that way, you will find then that rounding will give you a range of numbers between `0` and `20`. Being said, rounding the value will not work.
 
-Another option is to use the floor or ceiling mathematical modifiers. Interestingly, `Math.floor()` will work here. But if you look at the API for `Math.floor`, it returns a double. So our return would actually be between `1.0` and `20.0`. `Math.ceil()` wont work because we have already added `1` and the return is a `double` and we need an `int`. We could have bypassed the addition of `1` and instead of called `Math.ceil()`, but adding 1 with a computer is always going to be faster than calling a method to get the ceiling, so we used that instead.
+  Another option is to use the floor or ceiling mathematical modifiers. Interestingly, `Math.floor()` will work here. But if you look at the API for `Math.floor`, it returns a double. So our return would actually be between `1.0` and `20.0`. `Math.ceil()` wont work because we have already added `1` and the return is a `double` and we need an `int`. We could have bypassed the addition of `1` and instead of called `Math.ceil()`, but adding 1 with a computer is always going to be faster than calling a method to get the ceiling, so we used that instead.
 
 ### Getting the correct data type
 
