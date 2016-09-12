@@ -63,7 +63,7 @@ Similarly, `scaledRandomNumber` is just the operation of `Math.random() * 20`, a
 double shiftedAndScaledRandomNumber = Math.random() * 20 + 1;
 ```
 
-In the above line of code, before we assign the output of `Math.random() * 20 + 1`, we follow basic math order of operations with a twist. First, `Math.random()` executes. It has to. If we reordered that formula to `20 * Math.random() + 1`, we can see we cannot multiply 20 to a method. It makes no sense. From there, we can see we have a trivial math problem. Using our example return of `0.985401134` from earlier, we can *imagine* the math operation as `0.985401134 * 20 + 1`. This is a simple order of operations and you would do `0.985401134 * 20` and then `19.70802268 + 1` to get `20.70802268`.
+In the above line of code, before we assign the output of `Math.random() * 20 + 1`, we follow basic math order of operations but with a twist. First, `Math.random()` executes. It has to. If we reordered that formula to `20 * Math.random() + 1`, we can see we cannot multiply 20 to a method. It makes no sense. From there, we can see we have a trivial math problem. Using our example return of `0.985401134` from earlier, we can *imagine* the math operation as `0.985401134 * 20 + 1`. This is a simple order of operations and you would do `0.985401134 * 20` and then `19.70802268 + 1` to get `20.70802268`.
 
 Using our imagined `Math.random()` output, `shiftedAndScaledRandomNumber` would be assigned `20.70802268`.
 
