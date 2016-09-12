@@ -18,7 +18,7 @@ From here on, I will refer to the `random` methods output as `randomNumber`.
 Let us imagine for the tutorial that the `randomNumber` was assigned `0.985401134`. Well, `0.985401134` is not between 1 and 20, where 20 is our *n* (20 sided die).
 
 ### Scale to 20
-We know that `Math.random()` returns a number between 0 and 1, but the 0 is inclusive and the 1 is exclusive. This means that we could possibly of had a value assigned to `randomNumber` that is `0.00000000000000`. What will never happen is that we will get a number assigned to `randomNumber` that is greater than or equal to 1. The highest number we can get is `.999999999999999`. That is because a double has a 15 place precision.
+We know that `Math.random()` returns a number between 0 and 1, but the 0 is inclusive and the 1 is exclusive. This means that we could possibly have a value assigned to `randomNumber` that is `0.00000000000000`. What will never happen is that we will get a number assigned to `randomNumber` that is greater than or equal to 1. The highest number we can get is `.999999999999999`. That is because a double has a 15 place precision.
 
 So knowing our possible range of values returned from `Math.random()`, we need to adjust this to be able to cover any number from 1 to 20. If we take our output from `Math.random()` as described in the last paragraph and multiply it by 20 (our 20 sided die), we will end up with any number in the range of `0.00000000000000` and `19.9999999999999`. For our tutorial, I will create a new variable of type `double` to hold our scaling output.
 
@@ -28,7 +28,7 @@ double scaledRandomNumber = randomNumber * 20;
 
 Again, I will refer to the scaled random number as `scaledRandomNumber` from this point on. Realize that the first number in that range of `Math.random()` is obviously less than 1 and since our die has the smallest number of 1, this wont suffice. Similarly, the biggest number in the range is `19.9999999999999` which means we don't have a `20` value that we can roll. So this wont suffice. This means we need to *shift* this `scaledRandomNumber` value into the proper range of `1` to `20`.
 
-We could write code to look at `randomNumber` to see its value and determine how much we have to add to make it legal, but this would require adding a `1` when `randomNumber` is `0` and `.00000000000001` when it is `19.9999999999999`. But this is ugly. It would work, but it is ugly and we dont do ugly. This means there has to be a more succinct way of handling this. The easy way is to simply add `1` to `scaledRandomNumber`. I will save this into a variable named `shiftedAndScaledRandomNumber`.
+We could write code to look at `randomNumber` to see its value and determine how much we have to add to make it legal, but this would require adding a `1` when `randomNumber` is `0` and `.00000000000001` when it is `19.9999999999999`. This is ugly. It would work, but it is ugly and we dont do ugly. This means there has to be a more succinct way of handling this. The easy way is to simply add `1` to `scaledRandomNumber`. I will save this into a variable named `shiftedAndScaledRandomNumber`.
 
 ```java
 double shiftedAndScaledRandomNumber = scaledRandomNumber + 1;
