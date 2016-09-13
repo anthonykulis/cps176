@@ -20,6 +20,16 @@ public class CharacterGeneration {
     intel += (int)(Math.random() * 20) + 1;
     def += (int)(Math.random() * 20) + 1;
 
+
+    /*
+      Grading:
+      10 points for proper printing format
+      1 point for printing correct name
+      1 point for printing correct description
+      1 point for each attribute printed as int
+      1 point for each attribute as a random int with a minimum of 5
+      3 base points for combined all other work to get to printing.
+    */
     System.out.println("Character Name: " + name);
     System.out.println("Character Desc: " + desc);
     System.out.println();
