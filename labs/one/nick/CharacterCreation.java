@@ -1,5 +1,16 @@
 import java.util.Scanner;
 
+/*
+  Grading
+  Proper print out 0/10
+  Printing correct name 1 pt
+  Printing correct description 1pt
+  correct printed data type for each attribute 5pts
+  correctly printed a random number per attribute of minimum vaue of five 5pts
+  base 3pts
+
+  Score 15/25
+*/
 public class CharacterCreation {
 
 
