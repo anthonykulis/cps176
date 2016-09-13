@@ -29,7 +29,7 @@ private int _roll(){
 
 public static void main(String[] args){
   // instead of doing the *imperative* character building, call
-  // your methods instead
+  // your methods instead *declaratively*
 }
 ```
 
