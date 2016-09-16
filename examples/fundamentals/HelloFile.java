@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Scanner;
 
 public class HelloFile {
@@ -28,6 +26,9 @@ public class HelloFile {
 
     } catch(FileNotFoundException ex) {
       System.out.println("Unable to find " + fileName + ". Exiting");
+      System.exit(1);
+    } catch(IOException ex){
+      ex.printStackTrace();
       System.exit(1);
     }
 
