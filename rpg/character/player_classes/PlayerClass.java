@@ -21,7 +21,7 @@ public class PlayerClass {
     this._defense = 5;
   }
 
-  public void setCharcaterName(String name){
+  public void setCharacterName(String name){
     this._name = name;
   }
 
