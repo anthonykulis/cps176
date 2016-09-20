@@ -5,10 +5,10 @@ public class Sorcerer extends PlayerClass {
 
   public Sorcerer(){
     super("Sorcerer");
-    this.strength = 5;
-    this.dexterity = 7;
-    this.intelligence = 15;
-    this.constitution = 6;
-    this.defense = 5;
+    this._strength = 5;
+    this._dexterity = 7;
+    this._intelligence = 15;
+    this._constitution = 6;
+    this._defense = 5;
   }
 }
