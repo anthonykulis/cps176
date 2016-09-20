@@ -1,39 +1,34 @@
 package rpg.character;
 
-import java.util.Scanner;
-import java.io.*;
-
 import rpg.dice.*;
 import rpg.character.player_classes.*;
+
+import rpg.util.*;
+
+import java.io.*;
 
 public class Generator {
 
   public int characterClassID;
 
-  Scanner sc = new Scanner(System.in);
   Die die = new Die(20);
   String characterName, characterDescription;
   PlayerClass pc;
 
   public void askForCharacterClass(){
-    characterClassID = Integer.valueOf(this._askFor("Choose Class:\n  1. Warrior\n  2. Sorcerer\nEnter a 1 or 2: "));
+    characterClassID = Integer.valueOf(Dialog.askFor("Choose Class:\n  1. Warrior\n  2. Sorcerer\nEnter a 1 or 2: "));
   }
 
   public void askForCharacterName(){
-    characterName = this._askFor("Character Name: ");
+    characterName = Dialog.askFor("Character Name: ");
   }
 
   public void askForCharacterDescription(){
-    characterDescription = this._askFor("Character Description: ");
+    characterDescription = Dialog.askFor("Character Description: ");
   }
 
   public boolean askForCharacterSave(){
-    return this._askFor("Would you like to save this character? (y/n): ").toLowerCase().charAt(0) == 'y';
-  }
-
-  private String _askFor(String prompt){
-    System.out.print(prompt);
-    return sc.nextLine();
+    return Dialog.askFor("Would you like to save this character? (y/n): ").toLowerCase().charAt(0) == 'y';
   }
 
   public void randomlyAssignAttributes(int characterClassID){
@@ -59,28 +54,19 @@ public class Generator {
         System.exit(1);
     }
 
+    pc.setCharcaterName(characterName);
+    pc.setCharacterDescription(characterDescription);
+
   }
 
   public String toString(){
-    return "Character Name: " + characterName + "\n" +
-    "Character Description: " + characterDescription + "\n" +
-    pc.toString();
+    return pc.toString();
   }
 
   public void save(){
-    try {
-      String filePath = "rpg" + File.separator + "data" + File.separator + "characters" + File.separator;
-      String fileName = filePath + characterName.replace(" " , "") + ".character";
-      PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-      writer.println(this.toString());
-      writer.close();
-    } catch (FileNotFoundException e){
-      e.printStackTrace();
-      System.exit(1);
-    } catch (UnsupportedEncodingException e){
-      e.printStackTrace();
-      System.exit(1);
-    }
+    String filePath = "rpg" + File.separator + "data" + File.separator + "characters" + File.separator;
+    String fileName = characterName.replace(" " , "") + ".character";
+    pc.save(filePath + fileName, this.toString());
   }
 
 }

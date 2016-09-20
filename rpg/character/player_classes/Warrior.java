@@ -5,10 +5,10 @@ public class Warrior extends PlayerClass {
 
   public Warrior(){
     super("Warrior");
-    this.strength = 15;
-    this.dexterity = 7;
-    this.intelligence = 6;
-    this.constitution = 12;
-    this.defense = 8;
+    this._strength = 15;
+    this._dexterity = 7;
+    this._intelligence = 6;
+    this._constitution = 12;
+    this._defense = 8;
   }
 }
