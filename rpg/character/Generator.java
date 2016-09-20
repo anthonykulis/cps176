@@ -54,7 +54,7 @@ public class Generator {
         System.exit(1);
     }
 
-    pc.setCharcaterName(characterName);
+    pc.setCharacterName(characterName);
     pc.setCharacterDescription(characterDescription);
 
   }
