@@ -35,6 +35,7 @@ For this lab, you will be required to collect via the rpg.character.Generator cl
 * The user will finally have the option to save the character generated. You can prompt the user for this option using the `askForCharacterSave` method. Check its return type. It is a `boolean`. This means if the player selected any variant of `y`, the class returns a `true`, otherwise `false`. Use that response in your `if-else` to determine if you should save the character using the `Generator` classes `save` method.
   * For right now, we will only exit if the user doesn't select a `y` variant. Later when we learn loops, we will repeat the process until the user selects a `y`.
 
+* I have provided a template of `LoadingPrompt.java` in this repositories root directory. If you download the entire repository as a .zip file, you can then start working on that file directly. If you need to clean up for room, you may delete in that expanded .zip everything but `LoadingPrompt.java` and the `rpg` directory.
 
 ## Grading
 This is your third of the 8 programming assignments. This means it is worth 25 points. And with this one, from now on, if your submission is declarative, I will give you 5 points extra credit towards the assignment.
