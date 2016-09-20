@@ -83,7 +83,4 @@ public class Generator {
     }
   }
 
-  private void _saveHelper(String filePath){
-
-  }
 }
