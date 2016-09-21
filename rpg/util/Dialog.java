@@ -9,4 +9,6 @@ public class Dialog {
     System.out.print(prompt);
     return sc.nextLine();
   }
+
+
 }

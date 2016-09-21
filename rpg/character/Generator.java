@@ -34,25 +34,20 @@ public class Generator {
     switch(characterClassID){
       case 1:
         pc = new Warrior();
-        pc.increaseStrengthBy(die.roll());
-        pc.increaseConstitutionBy(die.roll());
-        pc.increaseDefenseBy(die.roll());
-        pc.increaseIntelligenceBy(die.roll());
-        pc.increaseDexterityBy(die.roll());
         break;
       case 2:
         pc = new Sorcerer();
-        pc.increaseStrengthBy(die.roll());
-        pc.increaseConstitutionBy(die.roll());
-        pc.increaseDefenseBy(die.roll());
-        pc.increaseIntelligenceBy(die.roll());
-        pc.increaseDexterityBy(die.roll());
         break;
       default:
         System.err.println("Invalid class ID");
         System.exit(1);
     }
 
+    pc.increaseStrengthBy(die.roll());
+    pc.increaseConstitutionBy(die.roll());
+    pc.increaseDefenseBy(die.roll());
+    pc.increaseIntelligenceBy(die.roll());
+    pc.increaseDexterityBy(die.roll());
     pc.setCharacterName(characterName);
     pc.setCharacterDescription(characterDescription);
 
