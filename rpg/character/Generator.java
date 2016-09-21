@@ -5,7 +5,6 @@ import rpg.character.player_classes.*;
 
 import rpg.util.*;
 
-import java.io.*;
 
 public class Generator {
 

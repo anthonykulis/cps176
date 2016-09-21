@@ -1,6 +1,7 @@
 package rpg.character.player_classes;
 
 import rpg.util.*;
+import java.io.*;
 
 public class PlayerClass {
   protected int _strength,
@@ -68,7 +69,7 @@ public class PlayerClass {
   }
 
   public void save(){
-    String fileName = characterName.replace(" " , "") + ".character";
+    String fileName = this._name.replace(" " , "") + ".character";
     String filePath = "rpg" + File.separator + "data" + File.separator + "characters" + File.separator;
     FileIO.saveCharacter(filePath + fileName, this.toString());
   }
