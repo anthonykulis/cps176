@@ -64,9 +64,7 @@ public class Generator {
   }
 
   public void save(){
-    String filePath = "rpg" + File.separator + "data" + File.separator + "characters" + File.separator;
-    String fileName = characterName.replace(" " , "") + ".character";
-    pc.save(filePath + fileName, this.toString());
+    pc.save();
   }
 
 }

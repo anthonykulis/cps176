@@ -67,7 +67,9 @@ public class PlayerClass {
     "Defense: " + this._defense + "\n";
   }
 
-  public void save(String fileName, String data){
-    FileIO.saveCharacter(fileName, this.toString());
+  public void save(){
+    String fileName = characterName.replace(" " , "") + ".character";
+    String filePath = "rpg" + File.separator + "data" + File.separator + "characters" + File.separator;
+    FileIO.saveCharacter(filePath + fileName, this.toString());
   }
 }
