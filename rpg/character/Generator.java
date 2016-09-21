@@ -5,7 +5,6 @@ import rpg.character.player_classes.*;
 
 import rpg.util.*;
 
-import java.io.*;
 
 public class Generator {
 
@@ -64,9 +63,7 @@ public class Generator {
   }
 
   public void save(){
-    String filePath = "rpg" + File.separator + "data" + File.separator + "characters" + File.separator;
-    String fileName = characterName.replace(" " , "") + ".character";
-    pc.save(filePath + fileName, this.toString());
+    pc.save();
   }
 
 }
