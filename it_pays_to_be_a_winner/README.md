@@ -4,7 +4,7 @@ I pays to be a winner. There is the person who won and the rest who didn't. Go N
 While this isn't the Navy, I still will give you the opportunities they gave me. For this test,
 and because it is your first test in computer science, I will give you the benefit of proving to me that not being the winner was a fluke. I believe in every single one of you and believe every single one of you have what it takes to be the winner.
 
-Yet, there will come a time where you cannot fall back on someone else to make it. There comes a time when you have to figure it out on your own to survive. While this is course is obviously not life and death, what you do from here on out will set the tone for how well you will succeed in your computer related field.
+Yet, there will come a time where you cannot fall back on someone else to make it. There comes a time when you have to figure it out on your own to survive. While this course is obviously not life and death, what you do from here on out will set the tone for how well you will succeed in your computer related field.
 
 So here it is. I will give you the opportunity to earn 10 points towards your test by answering a set of questions according to what you missed on the test. The less you got wrong, the easier the job is. This is your reward for preparing the adequate amount of time. Those of you who didn't prepare adequately compared to the winner, here is your chance to prove to that person you are just as capable and that they were lucky to win.
 
@@ -18,8 +18,12 @@ You may also be getting a coding assignment that will be part of this. It may no
 
 Click your name for the questions you need to answer:
 
-(Steve)[steve.md]
-(Nick)[nick.md]
-(Whitney)[whitney.md]
-(Shay)[shay.md]
-(Devin)[devin.md]
+[Steve](steve.md)
+
+[Nick](nick.md)
+
+[Whitney](whitney.md])
+
+[Shay](shay.md)
+
+[Devin](devin.md)
