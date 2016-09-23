@@ -22,7 +22,7 @@ Click your name for the questions you need to answer:
 
 [Nick](nick.md)
 
-[Whitney](whitney.md])
+[Whitney](whitney.md)
 
 [Shay](shay.md)
 
