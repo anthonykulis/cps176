@@ -90,8 +90,8 @@ if(x == y){
 ```
 
 ```java
-String name = "anthony";
-String myName = "anthony";
+String name = new String("anthony");
+String myName = new String("anthony");
 
 // name != myName - reference addresses differ
 if(name == myName){
