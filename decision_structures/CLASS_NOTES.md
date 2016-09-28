@@ -323,8 +323,8 @@ if(FakeClass.alwaysReturnsTrue()){
 ```java
 public class StringComparison {
   public void static main(String[] args){
-    String myName = "Anthony";
-    String someName = "Anthony";
+    String myName = new String("Anthony");
+    String someName = new String("Anthony");
 
     // Step 1 - print out reference value comparison
     // Step 2 - print out literal value comparison
@@ -343,8 +343,8 @@ public class StringComparison {
 ```java
 public class StringCaseComparison {
   pubic void static main(String[] args){
-    String myNameUpperCase = "ANTHONY";
-    String myNameLowerCase = "anthony";
+    String myNameUpperCase = new String("ANTHONY");
+    String myNameLowerCase = new String("anthony");
 
     // Step 1 - print out literal value comparison being case sensitive
     // Step 2 - print out literal value comparison being case insensitive
