@@ -143,7 +143,7 @@ String input;
 int number = -1;
 
 // validate the value - note the initial value of number
-while(number < 1 && number > 10){
+while(number < 1 || number > 10){
   input = JOptionPane.showInputDialog("Enter a number between 1 and 10");
 
   number = Integer.parseInt(input);
