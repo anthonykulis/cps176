@@ -242,7 +242,61 @@ System.out.println(x + " : " +y);
   * Honestly, you will never probably use that sentinel concept
 
 ## 4.7 Nesting
+* Nesting for loops is a loop inside of a loop
+
+```java
+for(int x = 0; i < 100; i++){
+  for(int y = 0; y < 5; y++){
+    //do something 500 times
+  }
+}
+```
+
+* Gotcha moments occur because of poor scope usage
+Example
+
+```java
+for(int i = 0; i < 100; i++){
+  for(i = 0; i < 50; i++){
+    // do something forever
+  }
+}
+```
+
+* You can also use any pre-declared scope
+
+```java
+for(int i = 0; i < 10; i++){
+  for(int j = 0; j < i; j++){
+    // how many times do I run?
+  }
+}
+```
+
 ## 4.8 The `break` and `continue` keywords
+
+* `break` causes a loop to terminate early
+
+```java
+while(true){
+  System.out.println("I only print once!");
+  break;
+}
+```
+
+* `continue` cause the loop to stop its current iteration and start another
+
+```java
+for(int i = 0; i < 10; i++){
+  if(i < 9) continue;
+  System.out.println("I only print once!");
+}
+```
 ## 4.9 Deciding which loop to use
+* Typically the rule of thumb is that if a boolean condition (or null condition) will stop your loop, use a `while` or `do-while` loop. Otherwise use a `for` loop.
+  * Later, in CPS215, you will learn recursion. Recursion is a kind of loop that uses methods instead of language constructs. Unlike a loop that runs until a condition is no longer met, recursion relies on stopping conditions. While similar in concept, they are actually orthogonal in practice.
+
 ## 4.10 Introduction to File I/O
+
+
 ## 4.11 Generating Random Numbers
