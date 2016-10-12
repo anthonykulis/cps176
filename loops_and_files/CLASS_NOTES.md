@@ -167,9 +167,8 @@ int x = 0;
 do {
   // how many times does this print?
   System.out.println(x);
-  x++;
 }
-while(x < 10);
+while(x++ < 10);
 ```
 
 ```java
