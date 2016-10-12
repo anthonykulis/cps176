@@ -5,6 +5,7 @@
 ## Content
 * If/Else
 * Switch
+* Ternary | Conditional
 * Programming using if/else
 
 ## Tips
