@@ -183,7 +183,7 @@ do {
 ### The grammar
 
 ```java
-for(Initialization, Test, Update){
+for(Initialization; Test; Update){
   Statement
 }
 ```
