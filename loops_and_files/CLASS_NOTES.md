@@ -296,6 +296,121 @@ for(int i = 0; i < 10; i++){
   * Later, in CPS215, you will learn recursion. Recursion is a kind of loop that uses methods instead of language constructs. Unlike a loop that runs until a condition is no longer met, recursion relies on stopping conditions. While similar in concept, they are actually orthogonal in practice.
 
 ## 4.10 Introduction to File I/O
+* We have already seen some file I/O, [rpg.util.FileIO.java](/rpg/util.FileIO.java), and now we shall introduce simple file IO formally.
+* There are two core file types, binary and text.
+  * In Windows, the file type is determined by the OS from the file extension
+  * In nearly all other OS's, the file type is determined by the files meta information.
+* Understanding the contents of a file allows us to create, edit, even apply filters on images and video. This class will obviously not get that technical but rather introduce us how to manage text based files.
 
+### Primer
+* Understanding the file meta characters will help in creating and reading files.
+  * Meta characters are not displayed but rather indicators to the computer in helping formatting.
+* The following are some useful characters to know
+  * The `\n` character (type `char`) indicates a new line should occur.
+    * In windows systems, the `\r` is also required for a new line, but cause a "carriage return" similar to old type writers that required a pull of the big lever to reset the striker position.
+  * The `\t` allows for tabs
+  * `\s` creates a space
+
+### Writing to a file
+* Writing to a text file can be very simple. We can use the same method of string formatting as we would to print to the terminal as we would to print to a file.
+
+
+[PrintWriter](https://docs.oracle.com/javase/8/docs/api/java/io/PrintWriter.html)
+* Constructors  
+  * `PrintWriter(File file)` - Creates a new PrintWriter, without automatic line flushing, with the specified file.
+  * `PrintWriter(String fileName)`- Creates a new PrintWriter, without automatic line flushing, with the specified file name.
+
+* Key Methods
+  * `print()` - varying types
+  * `println()` - varying types
+  * `printf()` - varying types
+  * `flush()` - forces the stream to be written to disk
+  * `close()` - closes the stream, writing all data to disk
+
+```java
+/*
+Row layout
+name\tdescription\tclassID\tstr\tdex\tcons
+*/
+
+// ignoring exceptions for demo reasons
+
+// just use a text file named database
+PrintWriter writer = new PrintWriter("database");
+
+//write some characters
+writer.println("anthony\tthe teacher\t2\t8\t14\t2");
+writer.println("that'juggernaut\tthe 4th highest rated juggernaut in swtor\t99\t12\t12");
+
+// is there a need to force a write? sure, why not! its a demo!
+writer.flush();
+
+// close that stream
+writer.close();
+```
+
+### Reading a file
+* Similarly, reading a file is already encapsulated and easy.
+  * In fact, we will re-use a class you already know, `Scanner`
+
+[Scanner](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
+* Constructor
+  * `Scanner(File source)` - Constructs a new Scanner that produces values scanned from the specified file
+
+* Methods
+  * Once you have the class constructed with a File, all the other methods to read from a input stream, `System.in`, are the same!
+
+  * `nextLine()`
+  * `nextInt()`
+  * ...
+  * ...
+
+
+```java
+/*
+Row layout
+name\tdescription\tclassID\tstr\tdex\tcons
+*/
+
+// ignoring exceptions for demo reasons
+
+// construct our File
+File file = new File("database");
+
+//construct our Scanner
+Scanner scanner = new Scanner(file);
+
+// print out all the characters
+while(scanner.hasNextLine()){
+  System.out.println(scanner.nextLine());
+}
+
+```
+
+### File Paths
+* File paths are "tricky". I only say this because file paths are different between Windows and the rest of the world.
+
+* Windows uses `\` to separate directories and files.
+  * `\sources\cps176\rpg\util\FileIO.java`
+* OS X, Linux, the web, etc, use `/` to separate directories and files.
+  * `/sources/cps176/rpg/util/FileIO.java`
+
+* To complicate things, Windows use partitions as "drives"
+  * `C:`, `D:`, ...
+* Everyone else mounts their partitions to a path. For instance, I can have two drives, one SSD with 128GB that I would use for the core OS and say a 3TB to use for my home directory. When that 3TB is mounted to my home directory, and the 128GB is mounted to my root directory (`/`), I could access files in my home drive like:
+  `/home/anthony/sources/cps176/rpg/util/FileIO.java`, where the `/home` is "root home", mounted on the 128Gb, and `/anthony` is my home mounted on the 3TB drive. So it is agnostic and unopinionated.
+* In contrast, partitions on Windows are lettered, `C:`. This means is I wanted something similar to the linux version, I would have `C:` for my root, and say `D:` for my "home".
+* You can see this will complicate things dramatically since Java is meant to be portable.
+
+* Will all this complication, Java provides in [File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html) a static member variable named `separator` that handles the system dependency.
+
+```java
+String systemIndependentString = File.separator + "sources" + File.separator + "cps176" + File.separator + "rpg";
+```
+
+* Of course the above sample doesn't handle absolute paths very well since Windows and Linux differ (`C:` vs `/`), but you can use "relative" paths (`..\` vs `../`) with ease.
+
+* If that is a bit confusing, do not worry. We will not worry about this portability in your first 3 classes. When you reach a systems programming class, this will be covered in detail. For here, it is nice to know, but we can always use `C:\\somefile.txt` and accept it wont work on linux, mac, or any of the other 10,000 operating systems and distribution flavors.
 
 ## 4.11 Generating Random Numbers
+* We covered this in Chapter 3. 

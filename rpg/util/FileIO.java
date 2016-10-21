@@ -8,6 +8,7 @@ public class FileIO {
     try {
       PrintWriter writer = new PrintWriter(file, "UTF-8");
       writer.println(data);
+      writer.flush();
       writer.close();
     } catch (FileNotFoundException e){
       e.printStackTrace();
