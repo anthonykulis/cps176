@@ -275,3 +275,38 @@ for(int i = 0; i < 10; i++){
 ```
 
 The above is totally legal. How could we tell the size of each array in the cell of the first dimension?
+
+
+#### Variable Length Parameters in Methods
+If you are wondering, and I hope you are, you may ask yourself, "What if I needed to pass an unknown length of some type to a method, can I do this or do I need to pass an array?". You can do either! Java provide a syntax to handle this.
+
+To do it, it only requires some simple syntax and follow some basic rules.
+
+```java
+public int sum(int... nums){
+  // accessing this with the enhanced for loop
+  for(int num : nums){
+    //do something.
+  }
+}
+```
+
+This is the same as
+
+```java
+public int sum(int[] nums){
+  for(int num : nums){
+    //do something
+  }
+}
+```
+
+You can also pass extra variables, but they must occur **before** the variable length. In essence, you're telling the compiler that anything from here on out is going to be of type whatever and accessible to the variable I give it.
+
+```java
+// legal
+public int sum(String name, int... nums){}
+
+// illegal
+public int sum(int... nums, String name);
+```

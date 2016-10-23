@@ -1,4 +1,5 @@
 public class TwoD {
+
   public static void main(String[] args){
     int[][] nums = {{1,2}, {3,4}};
 
@@ -12,5 +13,8 @@ public class TwoD {
       if(i < nums.length - 1) System.out.print(", ");
     }
     System.out.println("}");
+
   }
+
+
 }
