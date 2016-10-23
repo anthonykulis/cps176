@@ -184,7 +184,7 @@ public class Example {
 
 
 ### Return Values
-If a method declares in its signature it will return a type, it **must** return that type, eventually.
+If a method declares in its signature it will return a type, it **must** return that type, eventually. One exception to this rule is returning `null`. You may return `null` in place of the types value since `null` is a value of all types.
 
 Example:
 
