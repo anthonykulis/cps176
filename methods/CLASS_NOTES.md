@@ -199,6 +199,7 @@ public int cube(int n){
   int cubed = n * n * n;
 }
 
+// doesn't immediately return int and still legal
 public int fib(int n){
   if(n < 0){
     throw new RuntimeException("Cannot fib out negative values");
@@ -208,7 +209,7 @@ public int fib(int n){
     return 1;
   }
 
-  // doesn't return an int immediately, but eventually, so ok.
+  // eventually returns an int, so ok.
   return fib(n - 1) + fib(n - 2);
 }
 ```
