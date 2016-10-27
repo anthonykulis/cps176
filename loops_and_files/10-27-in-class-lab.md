@@ -26,3 +26,15 @@ Write a loop that starts at 1, incrementing infinitely, that stops when the scop
 ### Ex 6
 
 Write an infinite `for` loop that stops on user input of `stop`
+
+
+### Ex 7
+Write a loop that prints a christmas tree
+
+     *
+    ***
+   *****
+  *******
+     *
+     
+     
