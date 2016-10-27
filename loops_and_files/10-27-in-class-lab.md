@@ -31,10 +31,12 @@ Write an infinite `for` loop that stops on user input of `stop`
 ### Ex 7
 Write a loop that prints a christmas tree
 
+```
      *
     ***
    *****
   *******
      *
+```
      
      
