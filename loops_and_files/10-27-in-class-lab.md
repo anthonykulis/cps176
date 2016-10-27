@@ -4,7 +4,7 @@
 
 ### Ex 1
 
-Write a for loop that prints out every even digit. No `if` statements allowed
+Write a for loop that prints out every even int. No `if` statements allowed
 
 ### Ex 2
 
