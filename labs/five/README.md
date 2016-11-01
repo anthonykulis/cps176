@@ -12,7 +12,7 @@ This lab will be complete enough that you can use this class we will create to p
 ## Minimum Requirements
 You will be required to write a very basic database driver to handle `create`, `read`, `update`, and `destroy` methods (CRUD methods) on a ***flat-file database*** tables. For this lab, you will be able to call upon this class to write and read data from a file. We will have 6 primary methods:
 
-1. `public void createTable(String name)` - this will create the table in the database according to the name passed. If the table already exists, it will throw an exception for the user to catch. All tables will be stored relatively in a directory named `tables`. The table will have meta-information but be labeled with `#` at the beginning. The `#` will be our indicator we should ignore this row unless doing meta operations. The first meta-information we will use is the labels for each column. We shall cover this more in class.
+1. `public boolean createTable(String name)` - this will create the table in the database according to the name passed. If the table already exists, it will return false. If there is an error, it will throw an exception for the user to catch. All tables will be stored relatively in a directory named `tables`. The table will have meta-information but be labeled with `#` at the beginning. The `#` will be our indicator we should ignore this row unless doing meta operations. The first meta-information we will use is the labels for each column. We shall cover this more in class.
 
 2. `public void destroyTable(String name)` - this will delete the table and if it does not exist, throw an exception for the user to catch.
 
