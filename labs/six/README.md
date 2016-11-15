@@ -12,7 +12,7 @@ This lab will be complete enough that you can use this class we will create to p
 ## Minimum Requirements
 You will be required to extend our very basic database driver to handle an additional CRUD method, `find` on a ***flat-file database*** tables.
 
-1. `public String[] find(String value)` - This method will allow us to search for all hits of a key that match a value. This means it will need to return an array of type `String` containing each record that matches our key/value pair.
+1. `public String[] find(String key, String value)` - This method will allow us to search for all hits of a key that match a value. This means it will need to return an array of type `String` containing each record that matches our key/value pair.
 
 2. `public String findOne(String key, String value)` - While not a new method, you will need to update this method to remove the repeated code use. Simply leverage your new `find` method, expecting an array returned, then simply returning the only item in that array as the proper return type for this method.
 
